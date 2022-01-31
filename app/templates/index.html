@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- extend base.html -->
+    {% extends 'base.html'%}
+
+    <!-- import macro -->
+    {% import 'macros.html' as macro%}
+
+    <!-- styles block -->
+    {% block styles %}
+    <!-- variable block to prevent code override -->
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}"> {% endblock %}
+
+    <!-- define if else block -->
+    {% if title %}
+    <title> {{ title }}</title>
+    {% else %}
+    <title> News Previews Website </title>
+    {% endif %}
+</head>
+{% block content %}
+
+<!-- Popular movie -->
+<h3> Popular Movies</h3>
+<ul>
+    {{ macro.displayMovieList(popular)}}
+</ul>
+<!-- Upcoming movie  -->
+<h3> Upcoming Movies </h3>
+<ul>
+    {{ macro.displayMovieList(upcoming)}}
+</ul>
+<!-- Now showing movie -->
+<h3>Now Showing</h3>
+<ul>
+    {{ macro.displayMovieList(now_showing)}}
+</ul>
+{% endblock %}
+
+</html>
