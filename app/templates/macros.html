@@ -19,8 +19,9 @@
 <!-- forloop display each item -->
 {% for source in sources_list %}
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <h2> {{ source.title}} </h2>
-    <p> {{ source.review | truncate(30) }}</p>
+    <h2> <a href="/source/{{source.id}}"> {{ source.name}} </a></h2>
+    <p> {{ source.description | truncate(50) }}</p>
+    <a href="/sources/{{sources.id}}" class="btn btn-success btn-sm">See Details...</a>
 </div>
 {% endfor %}
 <!-- end displaySources -->

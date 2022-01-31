@@ -17,19 +17,27 @@
 
 <div class="container">
     <!-- Popular movie -->
-    <h3> Popular Movies</h3>
+    <h3> Business News</h3>
+    <br>
     <ul>
-        {{ macro.displayMovieList(popular)}}
+        {{ macro.displaySources(business)}}
     </ul>
     <!-- Upcoming movie  -->
-    <h3> Upcoming Movies </h3>
+    <h3> Sports News </h3>
+    <br>
     <ul>
-        {{ macro.displayMovieList(upcoming)}}
+        {{ macro.displaySources(sports)}}
     </ul>
     <!-- Now showing movie -->
-    <h3>Now Showing</h3>
+    <h3>Technology News</h3>
+    <br>
     <ul>
-        {{ macro.displayMovieList(now_showing)}}
+        {{ macro.displaySources(technology)}}
+    </ul>
+    <h3>Entertainment News</h3>
+    <br>
+    <ul>
+        {{ macro.displaySources(entertainment)}}
     </ul>
     {% endblock %}
 </div>
