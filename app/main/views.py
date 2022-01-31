@@ -26,7 +26,7 @@ def articles(id):
     '''
     View articles page function that returns articles in a given sources
     '''
-    article = get_articles(id)
+    articles = get_articles(id)
     title = f'{id}'
 
-    return render_template('articles.html',title = title,article = article)
+    return render_template('articles.html',title = title,articles = articles)
