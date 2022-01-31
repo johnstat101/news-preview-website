@@ -1,0 +1,35 @@
+<!-- extend base.html -->
+{% extends 'base.html'%}
+
+<!-- import macro -->
+{% import 'macros.html' as macro%}
+
+<!-- styles block -->
+{% block styles %}
+<!-- variable block to prevent code override -->
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<!-- end styles block -->
+{% endblock %}
+
+<!-- edit block content -->
+{% block content %}
+
+<div class="container">
+    <!-- Popular movie -->
+    <h3> Popular Movies</h3>
+    <ul>
+        {{ macro.displayMovieList(popular)}}
+    </ul>
+    <!-- Upcoming movie  -->
+    <h3> Upcoming Movies </h3>
+    <ul>
+        {{ macro.displayMovieList(upcoming)}}
+    </ul>
+    <!-- Now showing movie -->
+    <h3>Now Showing</h3>
+    <ul>
+        {{ macro.displayMovieList(now_showing)}}
+    </ul>
+    {% endblock %}
+</div>
