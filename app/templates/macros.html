@@ -5,9 +5,15 @@
 {% for source in sources_list %}
 
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <h4> <a href="/sources/{{source.id}}"> {{ source.name}} </a></h4>
-    <p> {{ source.description | truncate(100) }}</p>
-    <a href="/sources/{{source.id}}" class="btn btn-success btn-sm">See Details...</a>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4><a href="/sources/{{source.id}}"> {{ source.name}} </a></h4>
+        </div>
+        <div class="panel-body">
+            <p> {{ source.description | truncate(100) }}</p>
+            <a href="/sources/{{source.id}}" class="btn btn-success btn-sm">See All Articles...</a>
+        </div>
+    </div>
 </div>
 
 {% endfor %}
