@@ -20,13 +20,13 @@ def index():
     return render_template('index.html', title = title, business = business, sports = sports, technology = technology, entertainment = entertainment)
 
 
-@main.route('/sources/<int:id>')
+@main.route('/sources/<id>')
 def articles(id):
 
     '''
     View articles page function that returns articles in a given sources
     '''
     article = get_articles(id)
-    title = f'{article.title}'
+    title = f'{id}'
 
     return render_template('articles.html',title = title,article = article)

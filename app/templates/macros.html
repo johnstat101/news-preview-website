@@ -1,28 +1,16 @@
-{% macro displayArticlesList(articles_list) %}
-
-<!-- display articles-->
-{% for article in articles_list %}
-<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">
-    <img src="{{ article.poster }}" alt="{{ article.title }} poster" class="img-responsive">
-    <li class="text-center">
-        <a href="/movie/{{article.id}}">
-                    {{ movie.title|truncate(10)}}</a>
-    </li>
-</div>
-{% endfor %}
-<!-- end displayArticlesList macro -->
-{% endmacro %}
-
-
 <!-- Displaying Sources List -->
 {% macro displaySources(sources_list) %}
+
 <!-- forloop display each item -->
 {% for source in sources_list %}
+
 <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 review-card">
-    <h2> <a href="/source/{{source.id}}"> {{ source.name}} </a></h2>
-    <p> {{ source.description | truncate(50) }}</p>
-    <a href="/sources/{{sources.id}}" class="btn btn-success btn-sm">See Details...</a>
+    <h4> <a href="/sources/{{source.id}}"> {{ source.name}} </a></h4>
+    <p> {{ source.description | truncate(100) }}</p>
+    <a href="/sources/{{source.id}}" class="btn btn-success btn-sm">See Details...</a>
 </div>
+
 {% endfor %}
-<!-- end displaySources -->
+
+<!-- end displaySources macro-->
 {% endmacro %}
