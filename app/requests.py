@@ -30,7 +30,7 @@ def get_sources(category):
         if get_sources_response['sources']:
             sources_results_list = get_sources_response['sources']
             sources_results = process_sources(sources_results_list)
-    
+
     return sources_results
 
 def process_sources(sources_list):
@@ -52,10 +52,10 @@ def process_sources(sources_list):
         category = source_item.get('category')
         language = source_item.get('language')
         country = source_item.get('country')
-        
+
         sources_object = Sources(id,name,description,url,category,country,language)
         sources_results.append(sources_object)
-    
+
     return sources_results
 
 
@@ -80,6 +80,7 @@ def process_articles(articles_list):
     Function to process articles list and return 
 	'''
 	articles_object = []
+
 	for article_item in articles_list:
 		id = article_item.get('id')
 		author = article_item.get('author')
